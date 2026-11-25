@@ -78,7 +78,7 @@
 
   var STOPS = [
     {t:0,   sky:[157,194,210], hz:[233,238,234], accent:[169,132,74],  panel:[245,246,243,.72], line:[31,59,54,.14],    scrim:[236,238,232,.62], meta:[31,59,54]},
-    {t:.34, sky:[226,178,132], hz:[246,219,178], accent:[178,110,46],  panel:[250,236,216,.66], line:[110,70,30,.16],   scrim:[247,226,196,.58], meta:[150,96,48]},
+    {t:.34, sky:[226,178,132], hz:[246,219,178], accent:[156,90,32],  panel:[250,236,216,.66], line:[110,70,30,.16],   scrim:[247,226,196,.58], meta:[150,96,48]},
     {t:.62, sky:[75,72,119],   hz:[201,154,174], accent:[236,194,140], panel:[46,40,74,.5],     line:[255,255,255,.18], scrim:[38,32,64,.55],    meta:[60,54,96]},
     {t:1,   sky:[11,18,38],    hz:[38,43,74],    accent:[231,196,140], panel:[14,18,36,.56],    line:[255,255,255,.14], scrim:[8,11,26,.6],      meta:[11,18,38]}
   ];
@@ -99,7 +99,8 @@
     var s = doc.style, dark = t > .5;
     s.setProperty('--tod-sky', rgb(mix(a.sky, b.sky, k)));
     s.setProperty('--tod-hz', rgb(mix(a.hz, b.hz, k)));
-    s.setProperty('--tod-accent', rgb(mix(a.accent, b.accent, k)));
+    // keep the accent dark enough to read on light skies until the ink flips to light (t > .5)
+    s.setProperty('--tod-accent', rgb(!dark && t > STOPS[1].t ? STOPS[1].accent : mix(a.accent, b.accent, k)));
     s.setProperty('--tod-panel', rgba(mix(a.panel, b.panel, k)));
     s.setProperty('--tod-line', rgba(mix(a.line, b.line, k)));
     s.setProperty('--tod-scrim', rgba(mix(a.scrim, b.scrim, k)));

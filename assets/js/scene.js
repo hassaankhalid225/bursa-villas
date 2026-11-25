@@ -438,7 +438,7 @@
         var ext = 1 - smooth(.35, .55, p);
         off.subVectors(wantP, wantT).multiplyScalar(1 + (1 - aspect) * .55 * ext);
         wantP.copy(wantT).add(off);
-        wantT.y -= (1 - aspect) * 12 * ext * (1 - smooth(.15, .3, p) * .6);
+        wantT.y -= (1 - aspect) * 17 * ext * (1 - smooth(.15, .3, p) * .6);
       }
       return fov;
     }
