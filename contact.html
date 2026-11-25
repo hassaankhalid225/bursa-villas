@@ -11,29 +11,43 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
+<script>(function(d){d.classList.add('js');try{var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(!rm&&!sessionStorage.getItem('bv-intro')){d.classList.add('show-loader');sessionStorage.setItem('bv-intro','1');}}catch(e){}})(document.documentElement);</script>
 </head>
 <body class="page-contact">
+<div class="loader" aria-hidden="true">
+  <svg viewBox="0 0 240 150" class="loader-art">
+    <path class="ld-sun" d="M64 104 A56 56 0 0 1 176 104"/>
+    <path class="ld-hz" d="M20 104 H220"/>
+    <path class="ld-villa" d="M52 104 V84 H86 V66 H150 V84 H172 V104 M80 66 H158 M48 84 H178 M100 104 V88 H140 V104"/>
+  </svg>
+  <span class="ld-word">BURSA</span>
+</div>
 <a class="skip" href="#main">Skip to content</a>
 <header class="hdr" data-header>
   <div class="wrap">
     <nav class="side" aria-label="Main"><a href="index.html">Home</a><a href="about.html">Studio</a><a href="services.html">Services</a></nav>
     <a class="logo" href="index.html" aria-label="Bursa Building Contracting home"><b>BURSA</b><small>Building Contracting LLC</small></a>
     <nav class="side right" aria-label="Secondary"><a href="projects.html">Villas</a><a href="contact.html" aria-current="page">Contact</a><a class="pill" href="tel:+971505762363">Call us</a></nav>
-    <button class="menu-btn" data-menu-toggle aria-expanded="false" aria-controls="mnav">Menu</button>
+    <button class="menu-btn" data-menu-toggle aria-expanded="false" aria-controls="mnav"><span class="mb-lines" aria-hidden="true"></span><span class="mb-text">Menu</span></button>
   </div>
   <nav class="mnav" id="mnav" data-menu aria-label="Mobile"><a href="index.html">Home</a><a href="about.html">Studio</a><a href="services.html">Services</a><a href="projects.html">Villas</a><a href="contact.html" aria-current="page">Contact</a><a class="tel" href="tel:+971505762363">050 576 2363</a></nav>
 </header>
 <main id="main">
-<section class="phead"><div class="wrap"><h1>Book a consultation</h1><p class="lede">Tell us about your plot or your villa. We reply the same day on WhatsApp.</p></div></section>
-<section class="sec" style="padding-top:clamp(48px,6vw,80px)"><div class="wrap intro">
+<section class="phead phead-contact"><div class="wrap">
+  <p class="eyebrow">Contact</p>
+  <h1>Book a <em>consultation</em></h1>
+  <p class="lede">Tell us about your plot or your villa. We reply the same day on WhatsApp.</p>
+</div></section>
+<section class="sec contact-sec"><div class="wrap contact-grid">
   <div class="reach">
-    <p>Mobile and WhatsApp</p><a href="tel:+971505762363">050 576 2363</a>
-    <p style="margin-top:24px">Office</p><a href="tel:+97142991029">04 299 1029</a>
-    <p style="margin-top:24px">Visit us</p><p style="font-size:19px;color:var(--ink)">Office S-30, BC Hareb Building, Port Saeed, Deira, Dubai</p>
+    <div class="reach-item"><p class="reach-k">Mobile and WhatsApp</p><a href="tel:+971505762363">050 576 2363</a></div>
+    <div class="reach-item"><p class="reach-k">Office</p><a href="tel:+97142991029">04 299 1029</a></div>
+    <div class="reach-item"><p class="reach-k">Visit us</p><p class="reach-addr">Office S-30, BC Hareb Building, Port Saeed, Deira, Dubai</p></div>
   </div>
   <form class="form" data-contact-form data-whatsapp="971505762363" novalidate>
+    <p class="form-title">Your project</p>
     <div class="two">
       <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required></div>
       <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
@@ -41,22 +55,23 @@
     <div class="field"><label for="project">I am planning</label><select id="project" name="project"><option>A new villa</option><option>An extension</option><option>A renovation</option><option>A pool or garden</option></select></div>
     <div class="field"><label for="message">About your project</label><textarea id="message" name="message" required placeholder="Community, plot size, number of bedrooms, when you would like to start"></textarea></div>
     <p class="form-status" data-form-status role="status" aria-live="polite"></p>
-    <div><button class="btn solid" type="submit">Send on WhatsApp</button></div>
+    <div class="form-foot"><button class="btn solid" type="submit">Send on WhatsApp</button><p class="form-note">Opens WhatsApp with your message ready to send.</p></div>
   </form>
 </div></section>
-<section style="padding-bottom:clamp(80px,10vw,140px)"><div class="wrap"><iframe class="map" title="Map of Port Saeed, Deira" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Port+Saeed+Deira+Dubai&output=embed"></iframe></div></section>
+<section class="map-sec"><div class="wrap"><div class="map-frame"><iframe class="map" title="Map of Port Saeed, Deira" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Port+Saeed+Deira+Dubai&output=embed"></iframe><p class="map-cap">Port Saeed, Deira</p></div></div></section>
 </main>
 <footer class="ftr"><div class="wrap">
-  <div class="big">BURSA</div>
+  <div class="ftr-top">
+    <div class="big" aria-hidden="true">BURSA</div>
+    <p class="ftr-tag">Villas made for <em>Dubai light.</em></p>
+  </div>
   <div class="cols">
-    <div><p>Villa construction and contracting in Dubai.</p><p>Office S-30, BC Hareb Building, Port Saeed, Deira, Dubai</p></div>
-    <nav aria-label="Footer"><a href="services.html">Services</a><a href="projects.html">Villas</a><a href="about.html">Studio</a><a href="contact.html">Book a consultation</a></nav>
-    <nav aria-label="Phone"><a href="tel:+971505762363">050 576 2363</a><a href="tel:+97142991029">04 299 1029</a><a href="https://wa.me/971505762363" target="_blank" rel="noopener">WhatsApp</a></nav>
+    <div><h2 class="ftr-h">Studio</h2><p>Villa construction and contracting in Dubai.</p><p>Office S-30, BC Hareb Building, Port Saeed, Deira, Dubai</p></div>
+    <nav aria-label="Footer"><h2 class="ftr-h">Explore</h2><a href="services.html">Services</a><a href="projects.html">Villas</a><a href="about.html">Studio</a><a href="contact.html">Book a consultation</a></nav>
+    <nav aria-label="Phone"><h2 class="ftr-h">Talk to us</h2><a href="tel:+971505762363">050 576 2363</a><a href="tel:+97142991029">04 299 1029</a><a href="https://wa.me/971505762363" target="_blank" rel="noopener">WhatsApp</a></nav>
   </div>
   <div class="fine"><span>© <span data-year></span> Bursa Building Contracting Co LLC</span><span>Concept website — sample content for review</span></div>
 </div></footer>
-<script src="assets/js/vendor/three.min.js"></script>
-<script src="assets/js/scene.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>

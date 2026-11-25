@@ -2,7 +2,7 @@
 
 A multi-page static concept website for **Bursa Building Contracting Co LLC**, a boutique villa construction and renovation contractor based in Port Saeed, Deira, Dubai.
 
-Built around a warm architectural **limestone, deep teal, and dusk palette**, the site features an interactive **Three.js 3D modern villa** with a swimming pool and palm trees—complete with **drag-to-orbit camera controls** and a real-time **Time of Day slider** that transitions the sky, sun angle, shadows, and interior/pool lighting from midday to dusk and night.
+Built around a warm architectural **limestone, deep teal, dusk lilac and brass** palette with an editorial **Bodoni Moda** serif, the home page is a single **scroll-driven 3D story**: a Three.js limestone villa with pool and palms that the camera approaches from the air, glides along the water, and enters through the glass while the day moves from midday to golden hour, dusk and night. A **Time of Day slider** lets visitors take over at any moment, and the whole page (header, panels, buttons, browser theme colour) re-tints with the light.
 
 ---
 
@@ -17,7 +17,7 @@ Built around a warm architectural **limestone, deep teal, and dusk palette**, th
 | :---: | :---: |
 | ![Services Page](screenshots/services.png) | ![Villas Page](screenshots/projects.png) |
 
-| Book a Consultation | Mobile Responsive (`390×844`) |
+| Book a Consultation | Mobile Responsive (`375×812`) |
 | :---: | :---: |
 | ![Contact Page](screenshots/contact.png) | ![Mobile Home](screenshots/mobile-home.png) |
 
@@ -32,15 +32,20 @@ Built around a warm architectural **limestone, deep teal, and dusk palette**, th
 
 ## Key Features
 
-- **Interactive Three.js 3D Villa & Lighting System (`assets/js/scene.js`)**:
-  - Powered by bundled **Three.js r128** (`assets/js/vendor/three.min.js`) with soft PCF shadow mapping (`PCFSoftShadowMap`).
-  - **Time-of-Day Slider (`[data-tod]`)**: Smoothly interpolates sky color, fog, sun position/intensity, and warm interior/pool glow across **Midday → Dusk → Night**.
-  - **Drag-to-Turn Controls**: Pointer drag rotates the villa stage smoothly; mini 3D scenes on inner pages render at golden hour and night presets.
-  - Respects `prefers-reduced-motion`.
-- **Room-by-Room Accordion (`<details>`)**: Native accessible disclosures covering Living & Majlis, Kitchen, Bedrooms & Baths, and Pool & Garden finishing scopes.
-- **Architectural SVG Villa Illustrations**: Custom gradient vector illustrations depicting New Villa, Extension, Full Renovation, Courtyard Villa, Cantilever Villa, and Night Garden typologies.
-- **WhatsApp Consultation Form (`assets/js/main.js`)**: Client-side validation for name, phone, and brief, launching a pre-filled WhatsApp message to `+971 50 576 2363`.
-- **Zero Build Step**: Pure HTML5, CSS3, and vanilla JavaScript.
+- **Cinematic 3D villa (`assets/js/scene.js`, Three.js r128 vendored locally)**
+  - Stepped limestone volumes, a deep cantilevered overhang on fluted columns, bronze fins, arched majlis windows, a pergola, a stair tower and a walk-in living room (sofa, feature stone wall, pendants, floating stair, cove lighting).
+  - Shader sky with a sun that travels across the sky, a moon and stars; ACES tone mapping, image-based reflections on the glazing, soft PCF shadows.
+  - Hand-written water shader: animated ripples, caustics, Fresnel sky reflection, sun glints, underwater glow and the warm house reflected at night.
+  - Sculpted palms (ringed trunks, folded fronds that sway), olive trees, shrubs, lawns, lanterns and trunk uplights; additive glow sprites stand in for bloom so it stays fast.
+  - Smooth inertial drag-to-rotate (horizontal only, so touch scrolling is never hijacked); rendering pauses off-screen and in hidden tabs; DPR capped (1.75 desktop, 1.4 mobile) with automatic resolution drop on slow devices; lighter scene on phones (fewer palms and details, no shadows).
+- **Scroll story (`index.html` + `assets/js/main.js`)**: a pinned stage with five chapters (Approach, The plot, Golden hour, Dusk, Night). The camera follows a spline with eased dwell points, time of day advances with scroll, chapter text crossfades, and a chapter rail lets you jump between stops.
+- **Time of Day slider (`[data-tod]`)**: keyboard-operable range input with a visible label and live `aria-valuetext` (Midday / Golden hour / Dusk / Night). It drives the 3D lighting and the page tint (CSS custom properties `--tod-*`).
+- **Villas gallery (`projects.html`)**: six layered SVG architectural illustrations at different times of day with pointer and scroll parallax, swaying palms and pool shimmer on hover, and a per-villa **"Switch the lights on"** toggle that turns the scene to evening.
+- **Brand loader**: a brass line draws the sun arc and villa silhouette (about 1 second, first page of a visit only, pure CSS so it can never block the page).
+- **Soft page transitions**: CSS cross-document view transitions with a small JS fade fallback.
+- **WhatsApp consultation form (`assets/js/main.js`)**: client-side validation for name, phone and brief, opening a pre-filled WhatsApp message to `+971 50 576 2363`.
+- **Accessible and robust**: `prefers-reduced-motion` turns off the scroll camera, loader and animations (static frame, slider still works); visible focus states; a layered SVG fallback replaces the canvas when WebGL is unavailable and still follows the slider.
+- **Zero build step**: plain HTML, CSS and vanilla JavaScript.
 
 ---
 
@@ -48,10 +53,10 @@ Built around a warm architectural **limestone, deep teal, and dusk palette**, th
 
 | File | Page | Highlights |
 | :--- | :--- | :--- |
-| `index.html` | **Home** | Interactive 3D villa with time-of-day slider, three ways to build, room-by-room breakdown, studio quote |
-| `about.html` | **Studio** | Port Saeed studio ethos, one-contact site engineer model, itemised pricing, 4-step client journey |
-| `services.html` | **Services** | Villa construction, finishing works, extensions, renovation, pools & outdoors, MEP coordination |
-| `projects.html` | **Villas** | Illustrated gallery of 6 villa typologies (Courtyard, Night Garden, Cantilever, Family Extension, Terrace, Renovated) |
+| `index.html` | **Home** | Scroll-driven 3D villa story with time-of-day slider, three ways to build, room-by-room breakdown, studio quote |
+| `about.html` | **Studio** | Arched 3D villa at golden hour, one-contact site engineer model, itemised pricing, 4-step client journey timeline |
+| `services.html` | **Services** | Wide 3D villa at dusk, illustrated index of villa construction, finishing, extensions, renovation, pools & outdoors, MEP coordination |
+| `projects.html` | **Villas** | Parallax gallery of 6 illustrated villa types with a lights-on toggle (Courtyard, Night Garden, Cantilever, Family Extension, Terrace, Renovated) |
 | `contact.html` | **Book a consultation** | Port Saeed office details, WhatsApp form, embedded Google Map |
 | `404.html` | **Not Found** | Custom editorial 404 page (`This room has not been built yet.`) |
 
@@ -59,13 +64,15 @@ Built around a warm architectural **limestone, deep teal, and dusk palette**, th
 
 ## Design System & Typography
 
-- **Fonts**: `Bodoni Moda` (editorial serif display headings) and `Manrope` (clean geometric sans body) via Google Fonts.
+- **Fonts**: `Bodoni Moda` (editorial serif display headings, with italic accents) and `Manrope` (clean geometric sans body) via Google Fonts.
 - **Color Tokens** (`assets/css/style.css`):
   - Limestone Background: `#E4E6E1`
   - Chalk Surface: `#F5F6F3`
   - Deep Teal: `#1F3B36` / `#2E5750`
   - Dusk Accent: `#8E7FA8`
   - Brass Highlight: `#A9844A`
+  - Deep Night Teal: `#12241F`
+  - Time-of-day tints: `--tod-sky`, `--tod-hz`, `--tod-accent`, `--tod-ink`, `--tod-panel` (set live by `main.js`)
   - Ink Text: `#15201E`
 
 ---
@@ -130,4 +137,4 @@ Ready for static hosting on **Vercel**, **Netlify**, or **GitHub Pages**:
 ## Notes
 
 - Contact details (`Office S-30, BC Hareb Building, Port Saeed, Deira, Dubai`, `050 576 2363`, `04 299 1029`) come from public business directory listings.
-- Villa illustrations and project descriptions are sample concept content for design review.
+- Villa illustrations, 3D model and project descriptions are sample concept content for design review.

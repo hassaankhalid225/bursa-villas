@@ -11,34 +11,59 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
+<script>(function(d){d.classList.add('js');try{var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(!rm&&!sessionStorage.getItem('bv-intro')){d.classList.add('show-loader');sessionStorage.setItem('bv-intro','1');}}catch(e){}})(document.documentElement);</script>
 </head>
 <body class="page-404">
+<div class="loader" aria-hidden="true">
+  <svg viewBox="0 0 240 150" class="loader-art">
+    <path class="ld-sun" d="M64 104 A56 56 0 0 1 176 104"/>
+    <path class="ld-hz" d="M20 104 H220"/>
+    <path class="ld-villa" d="M52 104 V84 H86 V66 H150 V84 H172 V104 M80 66 H158 M48 84 H178 M100 104 V88 H140 V104"/>
+  </svg>
+  <span class="ld-word">BURSA</span>
+</div>
 <a class="skip" href="#main">Skip to content</a>
 <header class="hdr" data-header>
   <div class="wrap">
     <nav class="side" aria-label="Main"><a href="index.html">Home</a><a href="about.html">Studio</a><a href="services.html">Services</a></nav>
     <a class="logo" href="index.html" aria-label="Bursa Building Contracting home"><b>BURSA</b><small>Building Contracting LLC</small></a>
     <nav class="side right" aria-label="Secondary"><a href="projects.html">Villas</a><a href="contact.html">Contact</a><a class="pill" href="tel:+971505762363">Call us</a></nav>
-    <button class="menu-btn" data-menu-toggle aria-expanded="false" aria-controls="mnav">Menu</button>
+    <button class="menu-btn" data-menu-toggle aria-expanded="false" aria-controls="mnav"><span class="mb-lines" aria-hidden="true"></span><span class="mb-text">Menu</span></button>
   </div>
   <nav class="mnav" id="mnav" data-menu aria-label="Mobile"><a href="index.html">Home</a><a href="about.html">Studio</a><a href="services.html">Services</a><a href="projects.html">Villas</a><a href="contact.html">Contact</a><a class="tel" href="tel:+971505762363">050 576 2363</a></nav>
 </header>
 <main id="main">
-<section class="phead" style="padding-bottom:120px"><div class="wrap"><h1>This room has not been built yet.</h1><p class="lede">The page you asked for does not exist.</p><div class="btns" style="justify-content:center"><a class="btn solid" href="index.html">Go to the home page</a><a class="btn" href="contact.html">Book a consultation</a></div></div></section>
+<section class="nf"><div class="wrap nf-grid">
+  <svg class="nf-art" viewBox="0 0 400 260" role="img" aria-label="Line drawing of an unfinished villa under a night sky">
+    <circle cx="320" cy="50" r="14" class="nf-moon"/>
+    <path class="nf-hz" d="M0 210 H400"/>
+    <path class="nf-done" d="M60 210 V150 H230 V210 M50 150 H240 M60 150 V100 H180 V150 M44 100 H196"/>
+    <path class="nf-todo" d="M230 210 V170 H330 V210 M222 170 H340 M180 100 H250 V150"/>
+    <path class="nf-crane" d="M300 210 V40 M270 40 H372 M300 52 L330 40 M352 40 V86 M346 86 H358"/>
+    <rect class="nf-glow" x="76" y="164" width="140" height="40"/>
+  </svg>
+  <div class="nf-text">
+    <p class="eyebrow">Error 404</p>
+    <h1>This room has not been <em>built yet.</em></h1>
+    <p class="lede">The page you asked for does not exist.</p>
+    <div class="btns"><a class="btn solid" href="index.html">Go to the home page</a><a class="btn line" href="contact.html">Book a consultation</a></div>
+  </div>
+</div></section>
 </main>
 <footer class="ftr"><div class="wrap">
-  <div class="big">BURSA</div>
+  <div class="ftr-top">
+    <div class="big" aria-hidden="true">BURSA</div>
+    <p class="ftr-tag">Villas made for <em>Dubai light.</em></p>
+  </div>
   <div class="cols">
-    <div><p>Villa construction and contracting in Dubai.</p><p>Office S-30, BC Hareb Building, Port Saeed, Deira, Dubai</p></div>
-    <nav aria-label="Footer"><a href="services.html">Services</a><a href="projects.html">Villas</a><a href="about.html">Studio</a><a href="contact.html">Book a consultation</a></nav>
-    <nav aria-label="Phone"><a href="tel:+971505762363">050 576 2363</a><a href="tel:+97142991029">04 299 1029</a><a href="https://wa.me/971505762363" target="_blank" rel="noopener">WhatsApp</a></nav>
+    <div><h2 class="ftr-h">Studio</h2><p>Villa construction and contracting in Dubai.</p><p>Office S-30, BC Hareb Building, Port Saeed, Deira, Dubai</p></div>
+    <nav aria-label="Footer"><h2 class="ftr-h">Explore</h2><a href="services.html">Services</a><a href="projects.html">Villas</a><a href="about.html">Studio</a><a href="contact.html">Book a consultation</a></nav>
+    <nav aria-label="Phone"><h2 class="ftr-h">Talk to us</h2><a href="tel:+971505762363">050 576 2363</a><a href="tel:+97142991029">04 299 1029</a><a href="https://wa.me/971505762363" target="_blank" rel="noopener">WhatsApp</a></nav>
   </div>
   <div class="fine"><span>© <span data-year></span> Bursa Building Contracting Co LLC</span><span>Concept website — sample content for review</span></div>
 </div></footer>
-<script src="assets/js/vendor/three.min.js"></script>
-<script src="assets/js/scene.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
